@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate - PureHope Charity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        /* Centering Form */
+        .form-container {
+            max-width: 500px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            color: #004b87;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .input-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #0072ff;
+        }
+
+        .textarea-field {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 1em;
+            height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 10px;
+            background-color: #004b87;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #0072ff;
+        }
+
+        .form-container a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .form-container a:hover {
+            color: #ff6f61;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Donate Form -->
+    <div class="form-container">
+        <h2>Make a Donation</h2>
+        <!-- Update action to point to Flask 'donate' route -->
+        <form action="{{ url_for('donate') }}" method="post">
+            <label for="amount">Donation Amount ($):</label>
+            <!-- Added name attribute so Flask can access the form data -->
+            <input type="number" class="input-field" id="amount" name="amount" placeholder="Enter amount" required>
+            
+            <label for="payment-method">Payment Method:</label>
+            <!-- Added name attribute for payment method -->
+            <select class="input-field" id="payment-method" name="payment-method" required>
+                <option value="">Select Payment Method</option>
+                <option value="credit-card">Credit Card</option>
+                <option value="paypal">PayPal</option>
+                <option value="bank-transfer">Bank Transfer</option>
+            </select>
+            
+            <label for="message">Message (Optional):</label>
+            <!-- Added name attribute for the message -->
+            <textarea class="textarea-field" id="message" name="message" placeholder="Write a message or leave a note" rows="4"></textarea>
+
+            <button type="submit" class="submit-btn">Donate Now</button>
+        </form>
+        <a href="/">Back to Home</a>
+    </div>
+
+</body>
+</html>
+
+
+

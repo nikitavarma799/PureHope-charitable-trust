@@ -1,0 +1,39 @@
+<!-- templates/base.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Pure Hope Charity{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>PureHope Charity</h1>
+    </header>
+
+    <!-- Navigation Bar (hidden only on /charities) -->
+    {% if request.path != '/charities' and not hide_navbar %}
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/charities">Charities</a> |
+        <a href="/donate">Donate</a> |
+        <a href="/login">Login</a> |
+        <a href="/signup">Sign Up</a> |
+        <a href="#volunteer">Volunteer</a>
+    </nav>
+    {% endif %}
+
+    <!-- Main Content -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PureHope Charity. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

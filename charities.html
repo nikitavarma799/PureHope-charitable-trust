@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}Charity Listings - Pure Hope{% endblock %}
+
+{% block content %}
+<style>
+    .charity-list {
+        padding: 40px 20px;
+        background: linear-gradient(to right, #e3f2fd, #ffffff);
+        text-align: center;
+    }
+
+    .charity-list h1 {
+        font-size: 2.5em;
+        color: #004b87;
+        margin-bottom: 10px;
+    }
+
+    .charity-list p {
+        font-size: 1.1em;
+        color: #555;
+        margin-bottom: 40px;
+    }
+
+    .charity-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .charity-card {
+        background-color: #ffffff;
+        border-radius: 16px;
+        box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 20px;
+    }
+
+    .charity-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .charity-card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+    }
+
+    .charity-card h2 {
+        font-size: 1.4em;
+        margin: 15px 0 10px;
+        color: #004b87;
+    }
+
+    .charity-card p {
+        font-size: 0.95em;
+        padding: 0 15px;
+        color: #555;
+        flex-grow: 1;
+    }
+
+    .btn {
+        margin-top: 15px;
+        padding: 10px 20px;
+        background-color: #004b87;
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: bold;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+        background-color: #0072ff;
+    }
+
+    .custom-nav {
+        background-color: #f2f2f2;
+        padding: 10px 20px;
+        text-align: left;
+    }
+
+    .custom-nav a {
+        color: #004b87;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .custom-nav a:hover {
+        text-decoration: underline;
+    }
+</style>
+
+<!-- Custom navigation (Back to Home only) -->
+<div class="custom-nav">
+    <a href="/">← Back to Home</a>
+</div>
+
+<section class="charity-list">
+    <h1>Available Charities</h1>
+    <p>Find a cause you care about and contribute.</p>
+
+    <div class="charity-container">
+        <!-- Charity 1 -->
+        <div class="charity-card">
+            <img src="https://www.onlymelbourne.com.au/image/ico-savethechildren.jpg" alt="Save the Children">
+            <h2>Save the Children</h2>
+            <p>Providing education, nutrition, and safety to underprivileged children across India and globally.</p>
+            <a href="{{ url_for('charity_detail', charity_id=1) }}" class="btn">View Details</a>
+        </div>
+
+        <!-- Charity 2 -->
+        <div class="charity-card">
+            <img src="https://comptroller.texas.gov/economy/fiscal-notes/archive/2021/jul/images/rescue-hero.jpg" alt="Animal Rescue">
+            <h2>Animal Rescue</h2>
+            <p>Offering shelter, food, and rehabilitation to abandoned and stray animals with medical care.</p>
+            <a href="{{ url_for('charity_detail', charity_id=2) }}" class="btn">View Details</a>
+        </div>
+
+        <!-- Charity 3 -->
+        <div class="charity-card">
+            <img src="https://www.3blmedia.com/sites/default/files/styles/carousel_2x/public/images/kidswater_gen_040324.jpg" alt="Clean Water Initiative">
+            <h2>Clean Water Initiative</h2>
+            <p>Installing clean drinking water systems in rural villages to prevent waterborne diseases.</p>
+            <a href="{{ url_for('charity_detail', charity_id=3) }}" class="btn">View Details</a>
+        </div>
+
+        <!-- Charity 4 -->
+        <div class="charity-card">
+            <img src="https://i.natgeofe.com/n/79dd0b3b-0038-4d3c-a947-a8e3a0ecb9d5/52801_16x9.jpg?w=1200" alt="Disaster Relief Fund">
+            <h2>Disaster Relief Fund</h2>
+            <p>Delivering rapid emergency support, food, shelter, and aid during floods, earthquakes, and more.</p>
+            <a href="{{ url_for('charity_detail', charity_id=4) }}" class="btn">View Details</a>
+        </div>
+
+        <!-- Charity 5 -->
+        <div class="charity-card">
+            <img src="https://www.gtanepal.org/uploads/blogs/featured_88_1598003433.jpg" alt="Healthcare for All">
+            <h2>Healthcare for All</h2>
+            <p>Funding essential healthcare, surgeries, and mobile clinics for remote and low-income communities.</p>
+            <a href="{{ url_for('charity_detail', charity_id=5) }}" class="btn">View Details</a>
+        </div>
+
+        <!-- Charity 6 -->
+        <div class="charity-card">
+            <img src="https://cdn.educba.com/academy/wp-content/uploads/2024/07/Environmental-Protection.jpg" alt="Environmental Protection">
+            <h2>Environmental Protection</h2>
+            <p>Fighting climate change by planting trees, reducing plastic waste, and spreading awareness.</p>
+            <a href="{{ url_for('charity_detail', charity_id=6) }}" class="btn">View Details</a>
+        </div>
+    </div>
+</section>
+{% endblock %}
+

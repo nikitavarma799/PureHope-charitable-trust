@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donation Allocation</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Donation Allocation</h1>
+    <p>Total Donations Raised: ₹{{ total_donations }}</p>
+    
+    <table>
+        <tr>
+            <th>Charity</th>
+            <th>Amount Donated</th>
+        </tr>
+        {% for charity, amount in charity_allocations.items() %}
+        <tr>
+            <td>{{ charity }}</td>
+            <td>₹{{ amount }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

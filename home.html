@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - PureHope Charity</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        /* CSS styles remain the same */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f7f7f7;
+            color: #333;
+        }
+
+        header {
+            background-color: #004b87;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 3em;
+        }
+
+        nav {
+            background-color: #333;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 1.1em;
+        }
+
+        nav a:hover {
+            color: #ff6f61;
+        }
+
+        .hero-section {
+            background: linear-gradient(to right, #00c6ff, #0072ff);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .hero-section h1 {
+            font-size: 3.5em;
+        }
+
+        .hero-section p {
+            font-size: 1.2em;
+            margin: 20px 0;
+        }
+
+        .hero-section .donate-btn {
+            background-color: #004b87;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.3em;
+            text-decoration: none;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .hero-section .donate-btn:hover {
+            background-color: #ff6f61;
+        }
+
+        .about-section, .mission-section, .impact-section, .testimonials-section, .volunteer-section, .contact-section {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 900px;
+            margin: 40px auto;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .about-section h2, .mission-section h2, .impact-section h2, .testimonials-section h2, .volunteer-section h2, .contact-section h2 {
+            color: #004b87;
+            font-size: 2.5em;
+        }
+
+        .about-section p, .mission-section p, .impact-section p, .testimonials-section p, .volunteer-section p, .contact-section p {
+            font-size: 1.1em;
+            color: #555;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .impact-stats {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+
+        .impact-stats div {
+            background: #ff6f61;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            width: 30%;
+            font-size: 1.3em;
+        }
+
+        .testimonial {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+
+        .testimonial p {
+            font-style: italic;
+            font-size: 1.1em;
+        }
+
+        .testimonial span {
+            font-weight: bold;
+            display: block;
+            margin-top: 10px;
+        }
+
+        .volunteer-form input, .volunteer-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .volunteer-form button {
+            background-color: #004b87;
+            color: white;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .volunteer-form button:hover {
+            background-color: #ff6f61;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>PureHope Charity</h1>
+    </header>
+
+    <nav>
+        <a href="/">Home</a> |
+        <a href="/charities">Charities</a> |
+        <a href="/donate">Donate</a> |
+        <a href="/login">Login</a> |
+        <a href="/signup">Sign Up</a> |
+        <a href="#volunteer">Volunteer</a>
+    </nav>
+
+    <section class="hero-section">
+        <h1>Give Hope, Change Lives</h1>
+        <p>Your support can bring smiles to those in need.</p>
+        <a href="/donate" class="donate-btn">Donate Now</a>
+    </section>
+
+    <section class="about-section">
+        <h2>About Us</h2>
+        <p>PureHope is dedicated to empowering underprivileged communities by providing education, healthcare, and basic necessities.</p>
+    </section>
+
+    <section class="mission-section">
+        <h2>Our Mission</h2>
+        <p>We work to end poverty, promote education, and improve healthcare. Your donation fuels our efforts to create a better future.</p>
+    </section>
+
+    <section class="impact-section">
+        <h2>Our Impact</h2>
+        <div class="impact-stats">
+            <div>👨‍👩‍👧‍👦 5,000+ Families Helped</div>
+            <div>🎓 3,000+ Kids Educated</div>
+            <div>🏥 1,200+ Medical Camps</div>
+        </div>
+    </section>
+
+    <section class="testimonials-section">
+        <h2>What People Say</h2>
+        <div class="testimonial">
+            <p>"PureHope changed my life by providing my children with education. I can't thank them enough!"</p>
+            <span>- Sarah Johnson</span>
+        </div>
+        <div class="testimonial">
+            <p>"I've been a volunteer here for years, and the impact we make is real and powerful."</p>
+            <span>- David Clark</span>
+        </div>
+    </section>
+
+    <section id="volunteer" class="volunteer-section">
+        <h2>Join Us as a Volunteer</h2>
+        <p>Be part of our mission. Sign up and make a difference.</p>
+        <form class="volunteer-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Why do you want to volunteer?" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Email: contact@purehope.org | Phone: (123) 456-7890</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 PureHope Charity. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

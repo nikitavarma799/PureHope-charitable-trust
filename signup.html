@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - PureHope Charity</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .form-container {
+      max-width: 400px;
+      width: 100%;
+      background-color: #fff;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #004b87;
+      margin-bottom: 20px;
+    }
+
+    .input-field {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #004b87;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+
+    .submit-btn:hover {
+      background-color: #0072ff;
+    }
+
+    .form-container a {
+      display: block;
+      text-align: center;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #333;
+    }
+
+    .form-container a:hover {
+      color: #ff6f61;
+    }
+
+    .required::after {
+      content: " *";
+      color: red;
+    }
+  </style>
+</head>
+<body>
+
+<div class="form-container">
+  <h2>Create an Account</h2>
+  <form action="/signup" method="post">
+    <label for="fullName" class="required">Full Name</label>
+    <input type="text" id="fullName" name="fullName" class="input-field" placeholder="Full Name" required>
+
+    <label for="email" class="required">Email Address</label>
+    <input type="email" id="email" name="email" class="input-field" placeholder="Email Address" required>
+
+    <label for="password" class="required">Password</label>
+    <input type="password" id="password" name="password" class="input-field" placeholder="Password" required>
+
+    <label for="confirmPassword" class="required">Confirm Password</label>
+    <input type="password" id="confirmPassword" name="confirmPassword" class="input-field" placeholder="Confirm Password" required>
+
+    <button type="submit" class="submit-btn">Sign Up</button>
+  </form>
+  <a href="/login">Already have an account? Login here.</a> <!-- ✅ Redirects to login.html -->
+</div>
+
+</body>
+</html>
